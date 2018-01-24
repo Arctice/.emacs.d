@@ -10,11 +10,18 @@
 
 
 ;; comments
-(defun toggle-comment-on-line ()
-  "comment or uncomment current line"
+(defun toggle-comment ()
+  "comment or uncomment current line, or the region if one is active"
   (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+  (if (use-region-p)
+      (comment-or-uncomment-region
+       (region-beginning)
+       (region-end))
+    (comment-or-uncomment-region
+     (line-beginning-position)
+     (line-end-position))
+    ))
+(global-set-key (kbd "C-;") 'toggle-comment) 
 
 
 ;; http://www.emacswiki.org/emacs/HippieExpand

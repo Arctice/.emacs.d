@@ -1,8 +1,13 @@
 ;; smex
 ;; https://www.emacswiki.org/emacs/Smex
-(setq smex-save-file (concat user-emacs-directory "session/.smex-items"))
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+(use-package smex
+  :config
+  (setq smex-save-file (concat user-emacs-directory "session/.smex-items"))
+  (smex-initialize)
+  :bind ("M-x" . 'smex)
+  :defer t
+  )
+
 
 ;; ido
 ;; http://www.emacswiki.org/emacs/InteractivelyDoThings

@@ -6,7 +6,6 @@
 (setq inhibit-startup-message t)
 
 
-
 ;; Desktop sessions
 (setq desktop-load-locked-desktop t)
 (setq desktop-restore-eager 4)

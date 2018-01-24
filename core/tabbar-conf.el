@@ -27,7 +27,7 @@
 (defun hide-special-buffers-tabs ()
    "Separates all *special* and dired buffers"
    (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
-               ((eq major-mode 'dired-mode) "emacs")
+               ((eq major-mode 'dired-mode) "dired")
                (t "user"))))
 
 (setq tabbar-buffer-groups-function 'hide-special-buffers-tabs)

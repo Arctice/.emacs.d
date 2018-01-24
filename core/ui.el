@@ -11,6 +11,11 @@
 ;; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 
+;; Yafolding, everywhere
+(define-globalized-minor-mode global-yafolding-mode yafolding-mode
+  (lambda () (yafolding-mode 1)))
+(global-yafolding-mode 1)
+
 ;; Display column in info bar
 (column-number-mode 1)
 
