@@ -30,6 +30,8 @@
 
 (blink-cursor-mode 0)
 
+(menu-bar-mode -1)
+
 (setq-default frame-title-format "%b (%f)")
 
 ;; Hide toolbar
@@ -40,3 +42,16 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+
+(global-git-gutter-mode 1)
+(custom-set-variables
+ '(git-gutter:modified-sign ">") ;; two space
+ '(git-gutter:added-sign "+")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "-")
+ '(git-gutter:update-interval 1)
+ '(git-gutter:lighter " GitG")
+ (set-face-background 'git-gutter:modified nil)
+ (set-face-foreground 'git-gutter:added "light green")
+ (set-face-foreground 'git-gutter:modified "light sky blue")
+ (set-face-foreground 'git-gutter:deleted "red")
+ (set-face-bold-p 'git-gutter:deleted t))

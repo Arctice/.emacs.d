@@ -8,7 +8,6 @@
   :defer t
   )
 
-
 ;; ido
 ;; http://www.emacswiki.org/emacs/InteractivelyDoThings
 (ido-mode t)
@@ -21,9 +20,22 @@
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
-
 ;; saner mouse scrolling
 (setq mouse-wheel-scroll-amount '(4 ((shift) . 4))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
+;; swiper no swiping
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers 1)
+(setq swiper-stay-on-quit t)
+;; (global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "C-h f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "C-h v") 'counsel-describe-variable)
+(global-set-key (kbd "C-c C-g") 'counsel-git-grep)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
 
+;(set-face-attribute 'swiper-match-face-2 nil :background "dark orchid" :foreground "cyan" :weight "bold")
