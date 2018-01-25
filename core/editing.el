@@ -162,4 +162,4 @@
                (funcall method indent-point state))))))))
 
 (add-hook 'emacs-lisp-mode-hook
-          (lambda () (setq-local lisp-indent-function #'Fuco1/lisp-indent-function)))
+          (lambda () (setq-local lisp-indent-function #'lisp-indent-function)))
