@@ -38,6 +38,7 @@
     counsel
     anzu
     neotree
+    diminish
     )
   )
 
