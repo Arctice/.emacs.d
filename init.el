@@ -39,7 +39,6 @@
     anzu
     neotree
     diminish
-    powerline
     )
   )
 
@@ -101,8 +100,6 @@
  '(package-selected-packages
    (quote
     (use-package tabbar solarized-theme rainbow-delimiters paredit ido-completing-read+ exec-path-from-shell)))
- '(powerline-default-separator (quote slant))
- '(powerline-display-buffer-size nil)
  '(tabbar-separator (quote (0.4))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
