@@ -21,6 +21,10 @@
       ;; Mouse yank commands yank at point instead of at click.
       mouse-yank-at-point t)
 
+
+(setq comint-prompt-read-only t)
+
+
 (defalias 'repl-elisp 'ielm)
 
 ;; No need for ~ files when editing
