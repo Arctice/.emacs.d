@@ -29,8 +29,13 @@
     yafolding
     git-gutter
     magit
-    ;; clojure-mode cider
-    ;; clojure-mode-extra-font-locking
+
+    clojure-mode
+    clojure-mode-extra-font-locking
+
+    elpy
+    
+    ;; cider
     ;; elpy lua-mode tagedit webpaste
     ;; flycheck
     ivy
@@ -64,12 +69,12 @@
 
 
 (load "tabbar-conf")
-
 (load "editing")
 (load "navigation")
 (load "theme")
 (load "ui")
 (load "misc")
+
 
 ;; (custom-set-variables
 ;;  '(solarized-high-contrast-mode-line t)
