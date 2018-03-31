@@ -30,14 +30,12 @@
     git-gutter
     magit
 
+    cider
     clojure-mode
     clojure-mode-extra-font-locking
 
     elpy
-    
-    cider
-    ;; elpy lua-mode tagedit webpaste
-    ;; flycheck
+    ;; lua-mode tagedit webpaste flycheck
     ivy
     swiper
     counsel
@@ -71,40 +69,11 @@
 (load "tabbar-conf")
 (load "editing")
 (load "navigation")
-(load "theme")
 (load "ui")
+(load "theme")
 (load "misc")
 
-(setq linum-format "%3d|")
 
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("030bed79e98026124afd4ef8038ba7fe064314baf18b58759a5c92b91ec872fb" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
- '(git-gutter:added-sign "+")
- '(git-gutter:deleted-sign "-")
- '(git-gutter:lighter " GitG")
- '(git-gutter:modified-sign ">")
- '(git-gutter:update-interval 1)
- '(neo-autorefresh t)
- '(neo-force-change-root t)
- '(neo-show-hidden-files t)
- '(nil nil t)
- '(package-selected-packages
-   (quote
-    (use-package tabbar solarized-theme rainbow-delimiters paredit ido-completing-read+ exec-path-from-shell)))
- '(tabbar-separator (quote (0.4))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight ((t (:inherit anzu-replace-highlight))))
- '(linum ((t (:background "#002b36" :foreground "#657b83" :underline nil :weight normal))))
- '(swiper-match-face-2 ((t (:background "dark orchid" :foreground "cyan" :weight bold)))))
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 

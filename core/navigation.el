@@ -17,12 +17,6 @@
 (setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length 0)
 
-;; Changes all yes/no questions to y/n type
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; saner mouse scrolling
-(setq mouse-wheel-scroll-amount '(4 ((shift) . 4))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
 ;; swiper no swiping
 (ivy-mode 1)
@@ -38,6 +32,14 @@
 (global-set-key (kbd "C-c C-g") 'counsel-git-grep)
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
+
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+
+;; saner mouse scrolling
+(setq mouse-wheel-scroll-amount '(4 ((shift) . 4))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
 
 (defun neotree-project-dir ()
@@ -58,6 +60,9 @@
   :defer t
   :bind ([f8] . 'neotree-project-dir))
 
-
 (setq neo-theme (if (display-graphic-p) 'ascii 'ascii))
 (setq neo-smart-open t)
+(setq neo-autorefresh t)
+(setq neo-force-change-root t)
+(setq neo-show-hidden-files t)
+

@@ -18,13 +18,13 @@
 (add-to-list 'desktop-globals-to-save 'custom-enabled-themes)
 (defun desktop-load-theme () "load custom theme" (interactive)
        (cond ((display-graphic-p)
-       ;; graphical interface
-       (load-theme 'solarized-dark t)
-       )
-      (t
-       ;; solarized-theme breaks in terminal, so switch to this
-       (load-theme 'tomorrow-night-bright t)
-       )))
+              ;; graphical interface
+              (load-theme 'solarized-dark t)
+              )
+             (t
+              ;; solarized-theme breaks in terminal, so switch to this
+              (load-theme 'tomorrow-night-bright t)
+              )))
 
 (desktop-load-theme)
 
@@ -34,9 +34,28 @@
 (set-face-attribute 'default t :font "DejaVu Sans Mono-11" )
 
 
+(setq git-gutter:modified-sign ">")
+(setq git-gutter:added-sign "+")
+(setq git-gutter:deleted-sign "-")
+(setq git-gutter:update-interval 1)
+(setq git-gutter:lighter " GitG")
 
-(custom-set-faces
- '(swiper-match-face-2
-   ((t( :background "dark orchid"
-        :foreground "cyan"
-        :weight bold)))))
+(set-face-attribute
+ 'git-gutter:added nil
+ :foreground "light green")
+(set-face-attribute
+ 'git-gutter:modified nil
+ :foreground "light sky blue"
+ :background nil)
+(set-face-attribute
+ 'git-gutter:deleted nil
+ :foreground "red"
+ :bold t)
+
+(eval-after-load 'swiper
+  (lambda ()
+    (set-face-attribute
+     'swiper-match-face-2 nil
+     :background "dark orchid"
+     :foreground "cyan"
+     :bold t)))

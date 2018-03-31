@@ -92,7 +92,7 @@
  :background "slate gray")
 
 ;; Change padding of the tabs
-(custom-set-variables  '(tabbar-separator (quote (0.5))))
+(setq tabbar-separator (quote (0.5)))
 (defun tabbar-buffer-tab-label (tab)
   "Return a label for TAB.
 That is, a string used to represent it on the tab bar."
