@@ -35,7 +35,7 @@
 
     elpy
     
-    ;; cider
+    cider
     ;; elpy lua-mode tagedit webpaste
     ;; flycheck
     ivy
@@ -75,14 +75,7 @@
 (load "ui")
 (load "misc")
 
-
-;; (custom-set-variables
-;;  '(solarized-high-contrast-mode-line t)
-;;  '(solarized-scale-org-headlines nil)
-;;  '(webpaste-provider-priority
-;;    (quote
-;;     ("ix.io" "sprunge.us" "dpaste.com" "dpaste.de" "gist.github.com" "paste.pound-python.org"))))
-
+(setq linum-format "%3d|")
 
 
 (custom-set-variables
@@ -92,7 +85,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("030bed79e98026124afd4ef8038ba7fe064314baf18b58759a5c92b91ec872fb" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(git-gutter:added-sign "+")
  '(git-gutter:deleted-sign "-")
  '(git-gutter:lighter " GitG")
@@ -111,5 +104,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(highlight ((t (:inherit anzu-replace-highlight))))
+ '(linum ((t (:background "#002b36" :foreground "#657b83" :underline nil :weight normal))))
  '(swiper-match-face-2 ((t (:background "dark orchid" :foreground "cyan" :weight bold)))))
 

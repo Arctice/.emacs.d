@@ -25,10 +25,10 @@
 (global-set-key [(control iso-lefttab)] 'shk-tabbar-prev) ; compatibility
 
 (defun hide-special-buffers-tabs ()
-   "Separates all *special* and dired buffers"
-   (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
-               ((eq major-mode 'dired-mode) "dired")
-               (t "user"))))
+  "Separates all *special* and dired buffers"
+  (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+              ((eq major-mode 'dired-mode) "dired")
+              (t "user"))))
 
 (setq tabbar-buffer-groups-function 'hide-special-buffers-tabs)
 
@@ -57,7 +57,8 @@
  'tabbar-default nil
  :background "gray20"
  :foreground "gray20"
- :box '(:line-width 1 :color "gray20" :style nil))
+ :underline nil
+ :height 0.9)
 (set-face-attribute
  'tabbar-unselected nil
  :background "gray30"
@@ -76,11 +77,11 @@
  :box '(:line-width 5 :color "white" :style nil))
 (set-face-attribute
  'tabbar-button nil
- :box '(:line-width 1 :color "gray20" :style nil))
+ :box '(:line-width 1 :color "gray20" :style released-button))
 (set-face-attribute
  'tabbar-separator nil
  :background "gray20"
- :height 0.6)
+ :height 0.2)
 (set-face-attribute
  'tabbar-modified nil
  :foreground "light sky blue"
@@ -91,13 +92,13 @@
  :background "slate gray")
 
 ;; Change padding of the tabs
-(custom-set-variables  '(tabbar-separator (quote (0.4))))
+(custom-set-variables  '(tabbar-separator (quote (0.5))))
 (defun tabbar-buffer-tab-label (tab)
   "Return a label for TAB.
 That is, a string used to represent it on the tab bar."
   (let ((label  (if tabbar--buffer-show-groups
-                    (format "[%s]  " (tabbar-tab-tabset tab))
-                  (format "%s  " (tabbar-tab-value tab)))))
+                    (format " [%s]  " (tabbar-tab-tabset tab))
+                  (format " %s  " (tabbar-tab-value tab)))))
     ;; Unless the tab bar auto scrolls to keep the selected tab
     ;; visible, shorten the tab label to keep as many tabs as possible
     ;; in the visible area of the tab bar.
@@ -106,6 +107,6 @@ That is, a string used to represent it on the tab bar."
       (tabbar-shorten
        label (max 1 (/ (window-width)
                        (length (tabbar-view
-(tabbar-current-tabset)))))))))
+                                (tabbar-current-tabset)))))))))
 
 (tabbar-mode 1)

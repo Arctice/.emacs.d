@@ -80,10 +80,7 @@
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
 
-;; python
-;; (elpy-enable)
-;; (elpy-use-ipython)
-
+(setq-default c-basic-offset 4)
 
 (load "setup-clojure")
 (load "setup-python")
