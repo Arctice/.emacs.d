@@ -48,7 +48,7 @@
 
 ;; Don't use hard tabs
 (setq-default indent-tabs-mode nil)
-;; use 2 spaces for tabs
+;; use 4 spaces for tabs
 (defun die-tabs ()
   (interactive)
   (set-variable 'tab-width 2)
@@ -81,6 +81,9 @@
 
 
 (setq-default c-basic-offset 4)
+
+;; open .h files in C++ mode by default
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 (load "setup-clojure")
 (load "setup-python")
