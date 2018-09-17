@@ -19,7 +19,8 @@
 (defun desktop-load-theme () "load custom theme" (interactive)
        (cond ((display-graphic-p)
               ;; graphical interface
-              (load-theme 'solarized-dark t)
+              ;; (load-theme 'solarized-dark t)
+              (load-theme 'tomorrow-night t)
               )
              (t
               ;; solarized-theme breaks in terminal, so switch to this

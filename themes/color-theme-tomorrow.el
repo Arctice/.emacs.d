@@ -187,7 +187,7 @@ names to which it refers are bound."
      ;; Emacs interface
      (cursor ((,class (:background ,red))))
      (fringe ((,class (:background ,current-line))))
-     ;;(linum ((,class (:background ,current-line))))
+     (linum ((,class (:background ,current-line))))
      (linum ((,class (:foreground ,current-line))))
      (hl-line ((,class (:background ,current-line))))
      (border ((,class (:background ,current-line))))

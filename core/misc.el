@@ -53,3 +53,18 @@
 (diminish 'global-git-gutter-mode)
 (diminish 'ivy-mode)
 (diminish 'eldoc-mode)
+
+
+;; startup dashboard
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(setq dashboard-banner-logo-title "")
+(setq dashboard-startup-banner nil)
+
+(setq dashboard-items '((recents  . 20)
+                        (projects . 50)))
+

@@ -15,7 +15,7 @@
 (setq desktop-path (quote ("~/.emacs.d/session")))
 (setq desktop-lazy-verbose nil)
 (desktop-change-dir "~/.emacs.d/session")
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 
 

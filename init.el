@@ -35,7 +35,8 @@
     clojure-mode-extra-font-locking
 
     elpy
-    ;; lua-mode tagedit webpaste flycheck
+    lua-mode
+    ;; tagedit webpaste flycheck
     ivy
     swiper
     counsel
@@ -77,3 +78,4 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+(split-window-right)
