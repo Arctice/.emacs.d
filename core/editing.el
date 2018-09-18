@@ -5,8 +5,10 @@
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-r") 'anzu-query-replace-regexp)
 
+
 ;; Replace region by typing
 (delete-selection-mode 1)
+
 
 ;; DIE INSERT MODE
 (global-unset-key (kbd "<insert>"))
@@ -37,6 +39,13 @@
         try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
+
+
+;; dumb jumping
+(use-package dumb-jump
+  :bind (("C-j" . dumb-jump-go-other-window))
+  :defer t)
+(setq dumb-jump-selector 'ivy)
 
 
 (use-package magit
