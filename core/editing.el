@@ -8,6 +8,10 @@
 ;; Replace region by typing
 (delete-selection-mode 1)
 
+;; DIE INSERT MODE
+(global-unset-key (kbd "<insert>"))
+(global-unset-key (kbd "<insertchar>"))
+
 
 ;; comments
 (defun toggle-comment ()
