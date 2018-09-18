@@ -1,6 +1,8 @@
 ;; projectile everywhere!
 (projectile-global-mode)
 
+;; enable narrowing
+(put 'narrow-to-region 'disabled nil)
 
 ;; workaround for windows stupid
 (when (eq system-type 'windows-nt)
