@@ -43,8 +43,8 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-
-(global-git-gutter-mode 1)
+(when (not (eq system-type 'windows-nt))
+  (global-git-gutter-mode 1))
 
 (global-hi-lock-mode)
 

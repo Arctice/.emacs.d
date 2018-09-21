@@ -31,27 +31,30 @@
 
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11" ))
-(set-face-attribute 'default t :font "DejaVu Sans Mono-11" )
 
+(ignore-errors
+  (progn 
+    (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11" ))
+    (set-face-attribute 'default t :font "DejaVu Sans Mono-11" )))
 
-(setq git-gutter:modified-sign ">")
-(setq git-gutter:added-sign "+")
-(setq git-gutter:deleted-sign "-")
-(setq git-gutter:update-interval 1)
-(setq git-gutter:lighter " GitG")
+(when (not (eq system-type 'windows-nt))
+  (setq git-gutter:modified-sign ">")
+  (setq git-gutter:added-sign "+")
+  (setq git-gutter:deleted-sign "-")
+  (setq git-gutter:update-interval 1)
+  (setq git-gutter:lighter " GitG")
 
-(set-face-attribute
- 'git-gutter:added nil
- :foreground "light green")
-(set-face-attribute
- 'git-gutter:modified nil
- :foreground "light sky blue"
- :background nil)
-(set-face-attribute
- 'git-gutter:deleted nil
- :foreground "red"
- :bold t)
+  (set-face-attribute
+   'git-gutter:added nil
+   :foreground "light green")
+  (set-face-attribute
+   'git-gutter:modified nil
+   :foreground "light sky blue"
+   :background nil)
+  (set-face-attribute
+   'git-gutter:deleted nil
+   :foreground "red"
+   :bold t))
 
 (eval-after-load 'swiper
   (lambda ()
