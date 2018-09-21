@@ -33,6 +33,11 @@
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
 
+;; projectile everywhere!
+(projectile-global-mode)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 

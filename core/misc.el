@@ -1,6 +1,3 @@
-;; projectile everywhere!
-(projectile-global-mode)
-
 ;; enable narrowing
 (put 'narrow-to-region 'disabled nil)
 
