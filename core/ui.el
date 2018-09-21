@@ -31,17 +31,7 @@
 
 (blink-cursor-mode 0)
 
-(menu-bar-mode -1)
-
 (setq-default frame-title-format "%b (%f)")
-
-;; Hide toolbar
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-;; Hide scroll bars
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
 
 (when (not (eq system-type 'windows-nt))
   (global-git-gutter-mode 1))
