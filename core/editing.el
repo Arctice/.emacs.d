@@ -15,6 +15,10 @@
 (global-unset-key (kbd "<insertchar>"))
 
 
+;; Reload files when they change in the filesystem
+(global-auto-revert-mode)
+
+
 ;; comments
 (defun toggle-comment ()
   "comment or uncomment current line, or the region if one is active"
