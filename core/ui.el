@@ -26,8 +26,10 @@
 (global-hl-line-mode 1)
 
 ;; Line numbers
-(global-linum-mode)
-(setq linum-format "%3d|")
+(if (>= emacs-major-version 26)
+    (global-display-line-numbers-mode 1)
+  (progn (global-linum-mode)
+         (setq linum-format "%3d|")))
 
 (blink-cursor-mode 0)
 
