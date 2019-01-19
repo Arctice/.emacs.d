@@ -11,6 +11,10 @@
 ;; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 
+;; disable alarms entirely
+(setq ring-bell-function 'ignore)
+
+
 ;; Yafolding, everywhere
 (define-globalized-minor-mode global-yafolding-mode yafolding-mode
   (lambda () (yafolding-mode 1)))
