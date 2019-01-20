@@ -67,6 +67,7 @@
 (setq dashboard-banner-logo-title "")
 (setq dashboard-startup-banner nil)
 
-(setq dashboard-items '((recents  . 25)
+(setq dashboard-items '((projects . 4)
+                        (recents  . 25)
                         (projects . 50)))
 
