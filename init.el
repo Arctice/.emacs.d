@@ -71,7 +71,6 @@
 (load "tooling")
 (load "editing")
 (load "navigation")
-(load "tabbar-conf")
 (load "ui")
 (load "theme")
 (load "misc")
