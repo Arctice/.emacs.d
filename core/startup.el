@@ -29,12 +29,18 @@
 
 
 
-;; Save backups in ~/.emacs.d/session/backups
+;; save backups and autosaves in ~/.emacs.d/session/
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory
-                        "session/backups"))))
+                        "session/backups/"))))
 (setq auto-save-default t)
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat user-emacs-directory
+                       "session/auto-save/") t)))
 
+;; No need for ~ files when editing
+(setq create-lockfiles nil)
+ 
 
 ;; Sets up exec-path-from shell
 ;; https://github.com/purcell/exec-path-from-shell

@@ -7,11 +7,11 @@
 
 (require 'cl-lib)
 (cl-labels ((add-path (path)
-		   (add-to-list
-		    'load-path
-		    (concat user-emacs-directory path))))
+                   (add-to-list
+                    'load-path
+                    (concat user-emacs-directory path))))
   (mapc #'add-path
-	[ "core"
+        [ "core"
           "vendor/use-package"
           "themes"]))
 
@@ -20,40 +20,41 @@
 (defvar package-list
   '(smex
     ido-completing-read+
-    tabbar
+
+    ivy
+    counsel
+    swiper
+    anzu
+
+    magit
+    projectile
+    dumb-jump
+    exec-path-from-shell
+    
+    yafolding
     paredit
     rainbow-delimiters
-    exec-path-from-shell
-    solarized-theme
-    projectile
-    yafolding
-    git-gutter
-    magit
-
     cider
     clojure-mode
     clojure-mode-extra-font-locking
-
     elpy
     lua-mode
-    ;; tagedit webpaste flycheck
-    ivy
-    swiper
-    counsel
-    anzu
-    neotree
-    diminish
-    )
-  )
 
-(require 'package)
+    tabbar
+    git-gutter
+    diminish
+    solarized-theme
+    neotree
+    )
+
+  (require 'package))
 (package-initialize)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 (let ((missing-packages
        (seq-remove #'package-installed-p package-list)))
@@ -67,9 +68,10 @@
 (setq use-package-verbose t)
 
 
-(load "tabbar-conf")
+(load "tooling")
 (load "editing")
 (load "navigation")
+(load "tabbar-conf")
 (load "ui")
 (load "theme")
 (load "misc")
@@ -77,5 +79,3 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
-
-(split-window-right)

@@ -36,7 +36,8 @@
 ;; projectile everywhere!
 (projectile-global-mode)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-;; workaround for broken projectile C-p c behaviour 
+;; workaround for broken projectile C-p c behaviour
+;; occasionally wouldn't prompt for compile command
 (setq projectile-project-compilation-cmd "")
 
 

@@ -2,6 +2,9 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; workaround for windows stupid
+;; (sometimes, windows systems will refuse to open files
+;;  through C-x C-f due to permission issues, but for
+;;  whatever reason, the GUI dialog always works)
 (when (eq system-type 'windows-nt)
   (global-set-key (kbd "C-o") 'menu-find-file-existing)
   (defadvice find-file-read-args (around find-file-read-args-always-use-dialog-box act)
@@ -21,14 +24,13 @@
       mouse-yank-at-point t)
 
 
+;; read-only prompts in shell-like buffers
 (setq comint-prompt-read-only t)
 
 
+;; good names for gooder memorization
 (defalias 'repl-elisp 'ielm)
 
-;; No need for ~ files when editing
-(setq create-lockfiles nil)
- 
 
 (defun rename-this-buffer-and-file ()
   "Renames current buffer and file it is visiting."
@@ -47,6 +49,7 @@
                (set-buffer-modified-p nil)
                (message "File '%s' successfully renamed to '%s'" name (file-name-nondirectory new-name))))))))
 
+
 (require 'diminish)
 (diminish 'git-gutter-mode)
 (diminish 'global-git-gutter-mode)
@@ -55,15 +58,15 @@
 
 
 ;; startup dashboard
-
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook))
 
+
 (setq dashboard-banner-logo-title "")
 (setq dashboard-startup-banner nil)
 
-(setq dashboard-items '((recents  . 20)
+(setq dashboard-items '((recents  . 25)
                         (projects . 50)))
 

@@ -7,18 +7,16 @@
 (add-hook 'lisp-interaction-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'python-mode-hook #'rainbow-delimiters-mode)
 
+
 ;; enables rainbows everywhere
 ;; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-
-;; disable alarms entirely
-(setq ring-bell-function 'ignore)
 
 
 ;; Yafolding, everywhere
 (define-globalized-minor-mode global-yafolding-mode yafolding-mode
   (lambda () (yafolding-mode 1)))
 (global-yafolding-mode 1)
+
 
 ;; Display column in info bar
 (column-number-mode 1)
@@ -35,12 +33,21 @@
   (progn (global-linum-mode)
          (setq linum-format "%3d|")))
 
-(blink-cursor-mode 0)
 
+;; perish annoyances
+(blink-cursor-mode 0)
+(setq ring-bell-function 'ignore)
+
+
+;; concise frame title
 (setq-default frame-title-format "%b (%f)")
 
+
+;; git-gutter
 (when (not (eq system-type 'windows-nt))
   (global-git-gutter-mode 1))
 
+
+;; highlights
 (global-hi-lock-mode)
 

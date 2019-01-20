@@ -1,8 +1,3 @@
-;;;;
-;; Clojure
-;;;;
-
-
 ;; Let elpy do elpy things
 (elpy-enable)
 
