@@ -1,6 +1,5 @@
 ;; General text editing tweaks
 
-
 (load "setup-lisp")
 (load "setup-c-cpp")
 (load "setup-clojure")
@@ -40,6 +39,11 @@
         try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
+
+
+;; DIE INSERT MODE
+(global-unset-key (kbd "<insert>"))
+(global-unset-key (kbd "<insertchar>"))
 
 
 ;; Don't use hard tabs
