@@ -10,7 +10,11 @@
       (lambda (&optional arg)
         "Keyboard macro."
         (interactive "p")
-        (kmacro-exec-ring-item (quote ([3 112 83 3 112 99 return] 0 "%d")) arg)))
+        (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg)))
 
 (add-hook 'c++-mode-hook
-          (lambda () (local-set-key (kbd "<insert>") #'project-save-compile)))
+          (lambda ()
+            (local-set-key (kbd "C-c C-c") #'project-save-compile)))
+
+
+
