@@ -1,15 +1,8 @@
-;; Temporarily disable the GC while initializing emacs
-(setq gc-cons-threshold 64000000)
-(add-hook 'after-init-hook
-          #'(lambda ()
-              ;; Restore GC after init
-              (setq gc-cons-threshold 800000)))
-
 (require 'cl-lib)
-(cl-labels ((add-path (path)
-                   (add-to-list
-                    'load-path
-                    (concat user-emacs-directory path))))
+(cl-labels ((add-path
+             (path)
+             (add-to-list
+              'load-path (concat user-emacs-directory path))))
   (mapc #'add-path
         [ "core"
           "vendor/use-package"

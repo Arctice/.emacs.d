@@ -1,3 +1,11 @@
+;; Temporarily disable the GC while initializing emacs
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook
+          #'(lambda ()
+              ;; Restore GC after init
+              (setq gc-cons-threshold 800000)))
+
+
 ;; Start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -48,4 +56,8 @@
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
    '("PATH")))
+
+
+;; run emacs server, in case of external emacsclient executions
+(server-start)
 

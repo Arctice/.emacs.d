@@ -63,10 +63,8 @@
   :config
   (dashboard-setup-startup-hook))
 
-
 (setq dashboard-banner-logo-title "")
 (setq dashboard-startup-banner nil)
-
 (setq dashboard-items '((projects . 4)
                         (recents  . 25)
                         (projects . 50)))
