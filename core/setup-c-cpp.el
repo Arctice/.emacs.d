@@ -3,6 +3,14 @@
 ;; open .h files in C++ mode by default
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+(when (load "/usr/share/emacs/site-lisp/clang-format/clang-format.el" t)
+  (add-hook 'c++-mode-hook
+          (lambda ()
+            (local-set-key [C-M-tab] 'clang-format-region)))
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              (local-set-key (kbd "TAB") 'clang-format))))
+
 
 ;; (generated keyboard macro)
 ;; runs C-p S then C-p c and confirms
@@ -16,5 +24,5 @@
           (lambda ()
             (local-set-key (kbd "C-c C-c") #'project-save-compile)))
 
-
+(global-set-key (kbd "<insert>") #'project-save-compile)
 

@@ -63,5 +63,6 @@
 
 
 ;; Disable automatic indents on newline
-;; (setq electric-indent-mode nil)
+;; or dont
+(setq electric-indent-mode t)
 
