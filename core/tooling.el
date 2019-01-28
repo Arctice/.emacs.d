@@ -30,6 +30,7 @@
 (setq compilation-finish-functions
       (close-compilation-buffer-on-success "0 sec"))
 
+(global-set-key (kbd "<insert>") #'project-save-compile)
 
 (use-package magit
   :bind ("C-c g" . 'magit-status)

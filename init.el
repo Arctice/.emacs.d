@@ -61,8 +61,8 @@
 (setq use-package-verbose t)
 
 
-(load "tooling")
 (load "editing")
+(load "tooling")
 (load "navigation")
 (load "ui")
 (load "theme")
