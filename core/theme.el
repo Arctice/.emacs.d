@@ -19,7 +19,6 @@
 (defun desktop-load-theme () "load custom theme" (interactive)
        (cond ((display-graphic-p)
               ;; graphical interface
-              ;; (load-theme 'solarized-dark t)
               (load-theme 'base16-oceanicnext t)
               )
              (t
@@ -29,6 +28,11 @@
 
 (desktop-load-theme)
 
+;; summerfruit
+;; atelier
+;; poet
+;; solarized
+;; oceanicnext
 
 ;;font
 

@@ -13,19 +13,19 @@
 
 ;; Make the compilation window automatically disappear
 ;; from enberg on #emacs
-(defun close-compilation-buffer-on-success
-    (delay)
-  (lambda
-    (compilation-buffer result)
-    (if (null (string-match ".*exited abnormally.*" result))
-        (progn
-          (run-at-time
-           "0 sec" nil
-           (lambda ()
-             (select-window (get-buffer-window
-                             (get-buffer-create "*compilation*")))
-             (switch-to-buffer nil)))
-          (message "No Compilation Errors!")))))
+;; (defun close-compilation-buffer-on-success
+;;     (delay)
+;;   (lambda
+;;     (compilation-buffer result)
+;;     (if (null (string-match ".*exited abnormally.*" result))
+;;         (progn
+;;           (run-at-time
+;;            "0 sec" nil
+;;            (lambda ()
+;;              (select-window (get-buffer-window
+;;                              (get-buffer-create "*compilation*")))
+;;              (switch-to-buffer nil)))
+;;           (message "No Compilation Errors!")))))
 
 ;; (setq compilation-finish-functions
       ;; (close-compilation-buffer-on-success "0 sec"))

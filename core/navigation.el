@@ -22,7 +22,6 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers 1)
 (setq swiper-stay-on-quit t)
-;; (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "<f6>") 'ivy-resume)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
