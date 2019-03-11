@@ -63,6 +63,18 @@
 
 
 ;; Disable automatic indents on newline
-;; or dont
 (setq electric-indent-mode t)
+
+
+;; Makes current buffer's window sticky
+;; Based on https://stackoverflow.com/questions/43765/pin-emacs-buffers-to-windows-for-cscope/65992#65992
+(defun toggle-window-sticky ()
+  (interactive)
+  (message 
+   (if (let (window (get-buffer-window (current-buffer)))
+         (set-window-dedicated-p window 
+                                 (not (window-dedicated-p window))))
+       "Window '%s' made dedicated"
+     "Window '%s' no longer dedicated")
+   (current-buffer)))
 

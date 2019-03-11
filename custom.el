@@ -11,7 +11,7 @@
     (elpy-module-eldoc elpy-module-flymake elpy-module-pyvenv elpy-module-sane-defaults)))
  '(package-selected-packages
    (quote
-    (dumb-jump dashboard disable-mouse modern-cpp-font-lock realgud lua-mode yafolding tabbar solarized-theme smex rainbow-delimiters projectile paredit neotree magit ido-completing-read+ git-gutter exec-path-from-shell elpy diminish counsel clojure-mode-extra-font-locking cider anzu))))
+    (rmsbolt dumb-jump dashboard disable-mouse modern-cpp-font-lock realgud lua-mode yafolding tabbar solarized-theme smex rainbow-delimiters projectile paredit neotree magit ido-completing-read+ git-gutter exec-path-from-shell elpy diminish counsel clojure-mode-extra-font-locking cider anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

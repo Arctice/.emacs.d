@@ -2,6 +2,7 @@
 
 ;; open .h files in C++ mode by default
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . c++-mode))
 
 (when (load "/usr/share/emacs/site-lisp/clang-format/clang-format.el" t)
   (add-hook 'c++-mode-hook
