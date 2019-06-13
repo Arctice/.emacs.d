@@ -79,3 +79,7 @@
      "Window '%s' no longer dedicated")
    (current-buffer)))
 
+;; Re-enable disabled functions
+(put 'upcase-region 'disabled nil)
+
+

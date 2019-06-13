@@ -35,7 +35,8 @@
 ;; Disable line numbers for terms, since it breaks them
 (add-hook 'term-mode-hook
           (lambda () (progn
-                       (display-line-numbers-mode -1)
+                       (if (>= emacs-major-version 26)
+                           (display-line-numbers-mode -1))
                        (linum-mode -1))))
 
 

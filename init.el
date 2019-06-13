@@ -38,7 +38,7 @@
     tabbar
     git-gutter
     diminish
-    solarized-theme
+    base16-theme
     neotree
     )
 

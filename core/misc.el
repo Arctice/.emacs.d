@@ -28,6 +28,13 @@
 (setq comint-prompt-read-only t)
 
 
+;; handle ansi color codes in compile buffers
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (ansi-color-apply-on-region compilation-filter-start (point)))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+
 ;; good names for gooder memorization
 (defalias 'repl-elisp 'ielm)
 
