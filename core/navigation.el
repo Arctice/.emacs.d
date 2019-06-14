@@ -54,7 +54,7 @@
 
 ;; die annoying visual lines
 (setq line-move-visual nil)
-
+(set-default 'truncate-lines t)
 
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."

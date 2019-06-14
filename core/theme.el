@@ -20,7 +20,7 @@
        (cond ((display-graphic-p)
               ;; graphical interface
               ;; (load-theme 'solarized-dark t)
-              (load-theme 'tomorrow-night t)
+              (load-theme 'base16-oceanicnext t)
               )
              (t
               ;; solarized-theme breaks in terminal, so switch to this

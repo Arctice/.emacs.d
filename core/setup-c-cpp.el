@@ -19,10 +19,12 @@
       (lambda (&optional arg)
         "Keyboard macro."
         (interactive "p")
-        (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg)))
+        (progn (ignore-errors (kill-compilation))
+               (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg))))
 
 (add-hook 'c++-mode-hook
           (lambda ()
+            (local-set-key (kbd "M-n") 'ff-find-related-file)
             (local-set-key (kbd "C-c C-c") #'project-save-compile)))
 
 

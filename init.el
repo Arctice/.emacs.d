@@ -73,3 +73,36 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
+;; BINDINGS
+
+;; Unused binds
+;;
+;; C-o (insertline)
+;; C-m (RET)
+;; C-i (TAB)
+;; C-t (transpose-chars)
+;; C-z (suspend-frame)
+;;
+;; navigation bindings - could reuse for contextual actions
+;; C-p
+;; C-n
+;; C-b
+;; C-f
+;;
+;; maybe learn to use these
+;; C-v (scroll-up)
+;; M-v (scrol-down)
+;; C-e (end)
+;; C-a (begin)
+;; C-d (forward-delete)
+;;
+;; undefined
+;; M-p
+;; M-n
+
+;; Rebind candidates 
+;;
+;; other-window
+;; projectile-find-file
+;; counsel-git-grep
