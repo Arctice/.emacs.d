@@ -44,6 +44,7 @@
     )
 
   (require 'package))
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (package-initialize)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)

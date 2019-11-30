@@ -77,6 +77,7 @@
 
 (setq dashboard-banner-logo-title "")
 (setq dashboard-startup-banner nil)
+(setq dashboard-set-footer nil)
 (setq dashboard-items '((projects . 4)
                         (recents  . 25)
                         (projects . 50)))

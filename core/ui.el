@@ -27,32 +27,16 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
-;; Line numbers
-(if (>= emacs-major-version 26)
-    (global-display-line-numbers-mode 1)
-  (progn (global-linum-mode)
-         (setq linum-format "%3d|")))
-;; Disable line numbers for terms, since it breaks them
-(add-hook 'term-mode-hook
-          (lambda () (progn
-                       (if (>= emacs-major-version 26)
-                           (display-line-numbers-mode -1))
-                       (linum-mode -1))))
-
-
 ;; perish annoyances
 (blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
 
-
 ;; concise frame title
 (setq-default frame-title-format "%b (%f)")
-
 
 ;; git-gutter
 (when (not (eq system-type 'windows-nt))
   (global-git-gutter-mode 1))
-
 
 ;; highlights
 (global-hi-lock-mode)
