@@ -40,3 +40,14 @@
 
 ;; highlights
 (global-hi-lock-mode)
+
+;; compile buffer tweaks
+
+;; handle ansi color codes in compile buffers
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (ansi-color-apply-on-region compilation-filter-start (point)))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+;; default to scrolling the output
+(setq compilation-scroll-output t)

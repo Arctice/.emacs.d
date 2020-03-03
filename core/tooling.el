@@ -11,6 +11,8 @@
 ;; do not normally prompt for compilation command 
 (setq compilation-read-command nil)
 
+(setq compilation-scroll-output 't)
+
 ;; Make the compilation window automatically disappear
 ;; from enberg on #emacs
 ;; (defun close-compilation-buffer-on-success

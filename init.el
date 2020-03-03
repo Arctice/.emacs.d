@@ -41,17 +41,19 @@
     base16-theme
     poet-theme
     neotree
-    )
+    ))
 
-  (require 'package))
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(package-initialize)
+
+(require 'package)
+
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 (let ((missing-packages
        (seq-remove #'package-installed-p package-list)))

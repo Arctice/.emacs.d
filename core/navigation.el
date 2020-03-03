@@ -28,7 +28,6 @@
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
-(global-set-key (kbd "C-c C-g") 'counsel-git-grep)
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
 
