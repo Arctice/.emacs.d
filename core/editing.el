@@ -53,7 +53,7 @@
 ;; use 4 spaces for tabs
 (defun die-tabs ()
   (interactive)
-  (set-variable 'tab-width 2)
+  (set-variable 'tab-width 4)
   (mark-whole-buffer)
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
@@ -65,6 +65,9 @@
 
 
 ;; Disable automatic indents on newline
+;; or don't
+;; TODO: electric mode is a little obnoxious at times but writing without it
+;; feels quite bad. A smarter solution is needed here
 (setq electric-indent-mode t)
 
 
@@ -80,7 +83,9 @@
      "Window '%s' no longer dedicated")
    (current-buffer)))
 
+
 ;; Re-enable disabled functions
 (put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 
 

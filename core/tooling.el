@@ -9,9 +9,12 @@
 (enable-window-reuse-for-modes 'compilation-mode)
 
 ;; do not normally prompt for compilation command 
+;; TODO: seems to break occasionally, maybe in directories
+;; with no project or on old projectile versions. Investigate
 (setq compilation-read-command nil)
 
-(setq compilation-scroll-output 't)
+
+;; TODO: The below is nice to have sometimes. Maybe add a way of enabling it?
 
 ;; Make the compilation window automatically disappear
 ;; from enberg on #emacs
@@ -31,6 +34,15 @@
 
 ;; (setq compilation-finish-functions
       ;; (close-compilation-buffer-on-success "0 sec"))
+
+;; (generated keyboard macro)
+;; runs C-p S then C-p c and confirms
+(fset 'project-save-compile
+      (lambda (&optional arg)
+        "Keyboard macro."
+        (interactive "p")
+        (progn (ignore-errors (kill-compilation))
+               (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg))))
 
 (global-set-key (kbd "<insert>") #'project-save-compile)
 
@@ -54,5 +66,3 @@
 ;; so use use-package's bind-key* to enforce this binding globally
 ;; pray that this does not break something in the future
 (bind-keys* ("C-j" . dumb-jump-go-other-window))
-
-

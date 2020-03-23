@@ -1,6 +1,8 @@
 ;; Let elpy do elpy things
 (elpy-enable)
 
+;; TODO: This explodes elpy on systems without ipython
+;; not a huge issue but I'd appreciate better reliability
 (setq python-shell-interpreter "ipython3"
       python-shell-interpreter-args "-i --simple-prompt")
 

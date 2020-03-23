@@ -9,8 +9,7 @@
  '(elpy-modules
    (quote
     (elpy-module-eldoc elpy-module-flymake elpy-module-pyvenv elpy-module-sane-defaults)))
- '(package-selected-packages
-   (quote ())))
+ '(package-selected-packages (quote nil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
