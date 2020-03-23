@@ -31,6 +31,7 @@
     cider
     clojure-mode
     clojure-mode-extra-font-locking
+    haskell-mode
     rust-mode
     elpy
     lua-mode
@@ -40,7 +41,11 @@
     diminish
     base16-theme
     poet-theme
+    dashboard
     neotree
+
+    sudo-edit
+    rmsbolt
     ))
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
