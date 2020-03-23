@@ -1,15 +1,13 @@
 ;; rainbows
 (autoload 'rainbow-delimiters-mode "rainbow-delimiters")
-(add-hook 'emacs-lisp-mode-hook       #'rainbow-delimiters-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'rainbow-delimiters-mode)
-(add-hook 'ielm-mode-hook             #'rainbow-delimiters-mode)
-(add-hook 'lisp-mode-hook             #'rainbow-delimiters-mode)
-(add-hook 'lisp-interaction-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'python-mode-hook #'rainbow-delimiters-mode)
-
-
-;; enables rainbows everywhere
-;; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(dolist (rainbowy '(emacs-lisp-mode-hook
+                    eval-expression-minibuffer-setup-hook
+                    ielm-mode-hook
+                    lisp-mode-hook
+                    lisp-interaction-mode-hook
+                    python-mode-hook
+                    scheme-mode-hook))
+  (add-hook rainbowy #'rainbow-delimiters-mode))
 
 
 ;; Yafolding, everywhere
@@ -51,3 +49,13 @@
 
 ;; default to scrolling the output
 (setq compilation-scroll-output t)
+
+;; I frequently use read-only and scroll-lock modes in tandem for reading text
+;; this helper function toggles them both at once
+(defun reader-mode (&optional opt)
+  "Not really a mode at all"
+  (interactive)
+  (defun set (opt) (read-only-mode opt) (scroll-lock-mode opt))
+  (if opt (set opt)
+    (set (if (bound-and-true-p scroll-lock-mode)
+             0 1))))

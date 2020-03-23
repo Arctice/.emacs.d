@@ -1,10 +1,11 @@
 ;; General text editing tweaks
 
-(load "setup-lisp")
-(load "setup-c-cpp")
-(load "setup-rust")
-(load "setup-clojure")
-(load "setup-python")
+(load "setup/lisp")
+(load "setup/c-cpp")
+(load "setup/rust")
+(load "setup/clojure")
+(load "setup/scheme")
+(load "setup/python")
 
 
 ;; Search replacements

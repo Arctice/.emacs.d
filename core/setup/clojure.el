@@ -1,7 +1,3 @@
-;;;;
-;; Clojure
-;;;;
-
 ;; Enable paredit for Clojure
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 

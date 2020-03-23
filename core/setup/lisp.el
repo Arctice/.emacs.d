@@ -1,4 +1,3 @@
-
 ;; paredit
 ;; http://www.emacswiki.org/emacs/PareditCheatsheet
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
