@@ -18,4 +18,25 @@
 
 
 ;; UNICODE
-(define-key 'iso-transl-ctl-x-8-map "l" [?λ])
+(mapc
+ (lambda (args) (define-key 'iso-transl-ctl-x-8-map (car args) (cadr args)))
+ '(("a" [?α])
+   ("b" [?β])
+   ("g" [?γ])
+   ("G" [?Γ])
+   ("d" [?δ])
+   ("D" [?Δ])
+   ("t" [?θ])
+   ("l" [?λ])
+   ("p" [?π])
+   ("s" [?σ])
+   ("S" [?Σ])
+   ("f" [?φ])
+   ("o" [?ω])
+   ("O" [?Ω])
+
+   ("A" [?∀])
+   ("E" [?∃])
+   ("e" [?∈])
+   ("." [?·])
+   ))
