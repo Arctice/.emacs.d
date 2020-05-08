@@ -53,12 +53,15 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+(setq package-archive-priorities
+      '(("melpa-stable" . 10)
+        ("melpa" . 9)
+        ("gnu" . 2)))
 
 (let ((missing-packages
        (seq-remove #'package-installed-p package-list)))
