@@ -80,9 +80,7 @@
 
 ;; startup dashboard
 (use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook))
+  :config (dashboard-setup-startup-hook))
 
 (setq dashboard-banner-logo-title "")
 (setq dashboard-footer "")

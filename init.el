@@ -36,13 +36,17 @@
     elpy
     lua-mode
 
+    dired-subtree
+    dired-collapse
+    dired-ranger
+    dired-rainbow
+
     tabbar
     git-gutter
     diminish
     base16-theme
     poet-theme
     dashboard
-    neotree
 
     sudo-edit
     rmsbolt
