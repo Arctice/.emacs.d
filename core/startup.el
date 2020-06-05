@@ -1,10 +1,14 @@
 ;; Temporarily disable the GC while initializing emacs
 (setq gc-cons-threshold 64000000)
+;; Restore GC after init
 (add-hook 'after-init-hook
           #'(lambda ()
-              ;; Restore GC after init
-              (setq gc-cons-threshold 800000)))
-
+              (setq gc-cons-threshold 16777216)))
+;; Also temporarily neuter file-name-handler-alist (thanks DOOM)
+(defvar saved--file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+(add-hook 'emacs-startup-hook
+  (lambda () (setq file-name-handler-alist saved--file-name-handler-alist)))
 
 ;; Start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))

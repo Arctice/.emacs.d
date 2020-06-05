@@ -1,3 +1,7 @@
+
+;; changes *scratch* mode
+(setq initial-major-mode 'fundamental-mode)
+
 ;; workaround for windows stupid
 ;; (sometimes, windows systems will refuse to open files
 ;;  through C-x C-f due to permission issues, but for
