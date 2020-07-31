@@ -1,4 +1,6 @@
 
+(global-set-key (kbd "C-x p") 'other-window-reverse)
+
 ;; <C-z> originally 'suspend-frame
 (global-set-key (kbd "C-z") 'counsel-git-grep)
 (global-set-key (kbd "C-c C-g") 'counsel-grep)
@@ -10,11 +12,18 @@
 (global-set-key (kbd "C-S-<up>") 'scroll-down-line)
 (global-set-key (kbd "C-S-<down>") 'scroll-up-line)
 
+
+;; region diffs
+(global-set-key (kbd "C-c d f") 'diff-region-from)
+(global-set-key (kbd "C-c d t") 'diff-region-to)
+
+
 ;; Unused binds
 ;; C-o (insertline)
 ;; C-m (RET)
 ;; C-i (TAB)
 ;; C-c *
+;; f{5-9} \ {7}
 
 
 ;; UNICODE

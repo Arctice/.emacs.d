@@ -75,3 +75,8 @@
 
 
 (load "dired-hacks")
+
+
+(defun other-window-reverse ()
+  (interactive) (other-window -1))
+
