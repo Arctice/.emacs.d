@@ -37,6 +37,10 @@
 ;; workaround for broken projectile C-p c behaviour
 ;; occasionally wouldn't prompt for compile command
 (setq projectile-project-compilation-cmd "")
+;; fix projectile's brain damage
+;; by default, modern projectile can randomly choose to run compile commands
+;; in dirs other than project root, because it believes it is very smart
+(defun projectile-default-compilation-dir (_) "")
 
 
 (defun rename-this-buffer-and-file ()

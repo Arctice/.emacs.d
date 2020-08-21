@@ -16,6 +16,7 @@
 
 (setq ;; X11 copy-paste interaction
       x-select-enable-clipboard t
+      x-select-enable-clipboard-manager nil
       x-select-enable-primary t
       save-interprogram-paste-before-kill t
 
