@@ -15,6 +15,11 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 
+(setq term-supports-24bit
+      (equal (getenv-internal "TERM" initial-environment)
+             "xterm-24bit"))
+
+
 (add-to-list 'desktop-globals-to-save 'custom-enabled-themes)
 (defun desktop-load-theme () "load custom theme" (interactive)
        (cond ((display-graphic-p)
@@ -23,7 +28,7 @@
               )
              (t
               ;; solarized-theme breaks in terminal, so switch to this
-              (load-theme 'tomorrow-night-bright t)
+              (load-theme 'tomorrow-night t)
               )))
 
 (desktop-load-theme)

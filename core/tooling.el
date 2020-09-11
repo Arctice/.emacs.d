@@ -45,6 +45,7 @@
                (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg))))
 
 (global-set-key (kbd "<insert>") #'project-save-compile)
+(global-set-key (kbd "<insertchar>") #'project-save-compile)
 
 (use-package magit
   :bind ("C-c g" . 'magit-status)
