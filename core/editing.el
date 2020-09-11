@@ -2,6 +2,7 @@
 
 (load "setup-lisp")
 (load "setup-c-cpp")
+(load "setup-rust")
 (load "setup-clojure")
 (load "setup-python")
 

@@ -58,6 +58,9 @@
    '("PATH")))
 
 
-;; run emacs server, in case of external emacsclient executions
+;; start the emacs server 
+;; dont warn if server-start failed for some reason
+;; (e.g. if the server was already running somewhere else)
+(setq warning-suppress-types '((server)))
 (server-start)
 

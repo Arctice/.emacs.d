@@ -5,6 +5,7 @@
               'load-path (concat user-emacs-directory path))))
   (mapc #'add-path
         [ "core"
+          "vendor"
           "vendor/use-package"
           "themes"]))
 
@@ -30,6 +31,7 @@
     cider
     clojure-mode
     clojure-mode-extra-font-locking
+    rust-mode
     elpy
     lua-mode
 

@@ -32,6 +32,11 @@
     (global-display-line-numbers-mode 1)
   (progn (global-linum-mode)
          (setq linum-format "%3d|")))
+;; Disable line numbers for terms, since it breaks them
+(add-hook 'term-mode-hook
+          (lambda () (progn
+                       (display-line-numbers-mode -1)
+                       (linum-mode -1))))
 
 
 ;; perish annoyances
@@ -50,4 +55,3 @@
 
 ;; highlights
 (global-hi-lock-mode)
-

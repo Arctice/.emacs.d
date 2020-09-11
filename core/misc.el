@@ -50,12 +50,17 @@
                (message "File '%s' successfully renamed to '%s'" name (file-name-nondirectory new-name))))))))
 
 
+;; modeline
 (require 'diminish)
 (diminish 'git-gutter-mode)
 (diminish 'global-git-gutter-mode)
 (diminish 'ivy-mode)
 (diminish 'eldoc-mode)
+(diminish 'paredit-mode)
+(diminish 'abbrev-mode)
 
+(setq projectile-mode-line-function
+      (lambda () (format " [%s]" (projectile-project-name))))
 
 ;; startup dashboard
 (use-package dashboard

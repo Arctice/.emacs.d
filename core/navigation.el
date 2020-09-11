@@ -52,6 +52,9 @@
 (setq mouse-wheel-scroll-amount '(4 ((shift) . 4))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
+;; die annoying visual lines
+(setq line-move-visual nil)
+
 
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."
