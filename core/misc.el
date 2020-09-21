@@ -25,3 +25,17 @@
       ;; Mouse yank commands yank at point instead of at click.
       mouse-yank-at-point t)
 
+
+;; grab a list of feeds from my online notes and hand it to elfeed
+;; requires s.el
+(defun fetch-feeds ()
+  (interactive)
+  (setq elfeed-feeds
+        (with-current-buffer
+            (url-retrieve-synchronously "https://arc.birb.uk/shaarli/?E6vVow")
+          (mapcar 'caddr
+                  (s-match-strings-all
+                   "\\(atom\\|rss\\),.+href=\"\\(https?://[^\\\"]*\\)"
+                   (buffer-string))))))
+
+

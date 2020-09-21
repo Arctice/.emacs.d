@@ -4,6 +4,6 @@ recentf
 places
 projectile*
 auto-save-list
-elpa
-
-transient
+elpa/
+url/
+transient/
