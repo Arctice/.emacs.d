@@ -51,15 +51,15 @@
 (setq compilation-scroll-output t)
 
 
-;; I frequently use read-only and scroll-lock modes in tandem for reading text
-;; this helper function toggles them both at once
 (defun reader-mode (&optional opt)
-  "Not really a mode at all"
+  "I frequently use read-only and scroll-lock modes in tandem for reading text
+this helper function toggles them both at once"
   (interactive)
-  (defun set (opt) (read-only-mode opt) (scroll-lock-mode opt))
-  (if opt (set opt)
-    (set (if (bound-and-true-p scroll-lock-mode)
-             0 1))))
+  (let ((set (lambda (opt) (read-only-mode opt) (scroll-lock-mode opt))))
+    (if opt (funcall set opt)
+      (funcall set
+               (if (bound-and-true-p scroll-lock-mode)
+                   0 1)))))
 
 
 ;; Display column in info bar

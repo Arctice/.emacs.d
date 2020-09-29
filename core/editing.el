@@ -89,3 +89,5 @@
 (put 'narrow-to-region 'disabled nil)
 
 
+;; 80 character paragraphs
+(setq-default fill-column 80)
