@@ -24,7 +24,7 @@
 (defun desktop-load-theme () "load custom theme" (interactive)
        (cond ((display-graphic-p)
               ;; graphical interface
-              (load-theme 'base16-oceanicnext t)
+              (load-theme 'tomorrow-night-bright t)
               )
              (t
               ;; solarized-theme breaks in terminal, so switch to this
