@@ -9,7 +9,13 @@
 
 
 ;; Search replacements
-(global-set-key (kbd "C-s") 'swiper)
+
+(defun swipest (&optional initial-input)
+  (interactive)
+  (move-to-window-line-top-bottom 0)
+  (if initial-input
+      (swiper initial-input) (swiper)))
+(global-set-key (kbd "C-s") 'swipest)
 (global-set-key (kbd "C-r") 'anzu-query-replace-regexp)
 
 
