@@ -23,8 +23,8 @@
 (setq-default frame-title-format "%b (%f)")
 
 ;; git-gutter
-(when (not (eq system-type 'windows-nt))
-  (global-git-gutter-mode 1))
+;; (when (not (eq system-type 'windows-nt))
+;;   (global-git-gutter-mode 1))
 
 ;; highlights
 (global-hi-lock-mode)

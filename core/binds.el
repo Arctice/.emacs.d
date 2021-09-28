@@ -1,6 +1,8 @@
 
 (global-set-key (kbd "C-x p") 'other-window-reverse)
 
+(global-set-key (kbd "C-\\") 'delete-trailing-whitespace)
+
 ;; <C-z> originally 'suspend-frame
 (global-set-key (kbd "C-z") 'counsel-git-grep)
 (global-set-key (kbd "C-c C-g") 'counsel-grep)
@@ -16,7 +18,6 @@
 ;; region diffs
 (global-set-key (kbd "C-c d f") 'diff-region-from)
 (global-set-key (kbd "C-c d t") 'diff-region-to)
-
 
 ;; Unused binds
 ;; C-o (insertline)
