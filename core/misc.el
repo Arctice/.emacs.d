@@ -38,4 +38,7 @@
                    "\\(atom\\|rss\\),.+href=\"\\(https?://[^\\\"]*\\)"
                    (buffer-string))))))
 
+;; unbinds xref-find-definitions, which is buggy in c++-mode
+(global-unset-key (kbd "M-."))
+
 
