@@ -28,7 +28,12 @@
 
 (add-hook 'c++-mode-hook
           (lambda ()
-            (local-set-key (kbd "M-n") 'ff-find-related-file)
-            (local-set-key (kbd "C-c C-c") #'project-save-compile)))
+            (local-set-key (kbd "M-n") 'ff-find-related-file)))
 
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (c-set-offset 'innamespace 0)))
 
+(add-hook 'c-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-n") 'ff-find-related-file)))
