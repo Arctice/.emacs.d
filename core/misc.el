@@ -40,5 +40,7 @@
 
 ;; unbinds xref-find-definitions, which is buggy in c++-mode
 (global-unset-key (kbd "M-."))
+;; ...also xref-find-references
+(global-unset-key (kbd "M-?"))
 
 
