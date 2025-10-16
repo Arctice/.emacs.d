@@ -37,12 +37,8 @@
 
 ;; (generated keyboard macro)
 ;; runs C-p S then C-p c and confirms
-(fset 'project-save-compile
-      (lambda (&optional arg)
-        "Keyboard macro."
-        (interactive "p")
-        (progn (ignore-errors (kill-compilation))
-               (kmacro-exec-ring-item (quote ([3 112 83 3 112 99] 0 "%d")) arg))))
+(defalias 'project-save-compile
+   (kmacro "C-c p S C-c p c"))
 
 (global-set-key (kbd "<insert>") #'project-save-compile)
 (global-set-key (kbd "<insertchar>") #'project-save-compile)
