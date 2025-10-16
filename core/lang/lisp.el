@@ -2,7 +2,7 @@
 ;; http://www.emacswiki.org/emacs/PareditCheatsheet
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (dolist (lispy '(emacs-lisp-mode-hook
-                 eval-expression-minibuffer-setup-hook
+                 ;; eval-expression-minibuffer-setup-hook
                  ielm-mode-hook
                  lisp-mode-hook
                  lisp-interaction-mode-hook))
