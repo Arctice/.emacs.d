@@ -35,10 +35,11 @@
 ;; (setq compilation-finish-functions
       ;; (close-compilation-buffer-on-success "0 sec"))
 
-;; (generated keyboard macro)
-;; runs C-p S then C-p c and confirms
-(defalias 'project-save-compile
-   (kmacro "C-c p S C-c p c"))
+(defun project-save-compile (arg)
+  (interactive "P")
+  (progn (projectile-save-project-buffers)
+         (projectile-compile-project arg)))
+
 
 (global-set-key (kbd "<insert>") #'project-save-compile)
 (global-set-key (kbd "<insertchar>") #'project-save-compile)

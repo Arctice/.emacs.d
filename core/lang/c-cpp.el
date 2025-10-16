@@ -27,10 +27,10 @@
               (local-set-key (kbd "TAB") (clang-format-select))))
   (add-hook 'java-mode-hook
             (lambda ()
-              (local-set-key (kbd "TAB") (clang-format-select))))
+              (local-set-key [C-M-tab] 'clang-format-region)))
   (add-hook 'java-mode-hook
             (lambda ()
-              (local-set-key [C-M-tab] 'clang-format-region))))
+              (local-set-key (kbd "TAB") (clang-format-select)))))
 
 (add-hook 'c++-mode-hook
           (lambda ()
