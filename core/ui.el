@@ -82,6 +82,8 @@ this helper function toggles them both at once"
 (use-package dashboard
   :config (dashboard-setup-startup-hook))
 
+(setq dashboard-startupify-list '(dashboard-insert-items))
+
 (setq dashboard-banner-logo-title "")
 (setq dashboard-footer "")
 (setq dashboard-startup-banner nil)

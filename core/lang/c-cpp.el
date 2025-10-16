@@ -18,13 +18,19 @@
   (if (file-remote-p default-directory)
       'tramp-safe-clang-format 'clang-format))
 
-(when (load "/usr/share/emacs/site-lisp/clang-format-13/clang-format.el" t)
+(when (load "/usr/share/emacs/site-lisp/clang-format/clang-format.el" t)
   (add-hook 'c++-mode-hook
           (lambda ()
             (local-set-key [C-M-tab] 'clang-format-region)))
   (add-hook 'c++-mode-hook
             (lambda ()
-              (local-set-key (kbd "TAB") (clang-format-select)))))
+              (local-set-key (kbd "TAB") (clang-format-select))))
+  (add-hook 'java-mode-hook
+            (lambda ()
+              (local-set-key (kbd "TAB") (clang-format-select))))
+  (add-hook 'java-mode-hook
+            (lambda ()
+              (local-set-key [C-M-tab] 'clang-format-region))))
 
 (add-hook 'c++-mode-hook
           (lambda ()
