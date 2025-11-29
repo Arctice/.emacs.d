@@ -8,12 +8,12 @@
                  lisp-interaction-mode-hook))
   (add-hook lispy #'enable-paredit-mode))
 
-;; eldoc-mode shows documentation in the minibuffer when writing code
-;; http://www.emacswiki.org/emacs/ElDoc
-(dolist (mode '(emacs-lisp-mode-hook
-                lisp-interaction-mode-hook
-                ielm-mode-hook))
-  (add-hook mode 'turn-on-eldoc-mode))
+;; ;; eldoc-mode shows documentation in the minibuffer when writing code
+;; ;; http://www.emacswiki.org/emacs/ElDoc
+;; (dolist (mode '(emacs-lisp-mode-hook
+;;                 lisp-interaction-mode-hook
+;;                 ielm-mode-hook))
+;;   (add-hook mode 'turn-on-eldoc-mode))
 
 
 ;; The default lisp-indent-function is broken when trying to indent :keywords properly. This fixes it. Thanks Fuco1
