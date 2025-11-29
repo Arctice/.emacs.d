@@ -20,3 +20,9 @@
 
 (substitute-key-definition
  'elpy-nav-backward-block nil elpy-mode-map)
+
+;; are you fucking serious
+(setq python-indent-guess-indent-offset nil)
+
+;; no thanks
+(global-eldoc-mode -1)
